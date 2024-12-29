@@ -1,11 +1,10 @@
 ﻿using AutoGen.Core;
 using System.Text.Json.Serialization;
 using System.Text.Json;
-using Local.NET.Mistral;
 
-namespace Local.NET.Mistral;
+namespace Local.NET.LLAMA;
 
-internal class MistralFunctionCall
+internal class LlamaFunctionCall
 {
     /// <summary>
     /// get weather from city
@@ -39,7 +38,7 @@ internal class MistralFunctionCall
     {
         get => new FunctionContract
         {
-            Namespace = @"Local.NET.Mistral",
+            Namespace = @"Local.NET.Llama",
             ClassName = @"MistralFunctionCall",
             Name = @"GetWeather",
             Description = @"get weather from city",

@@ -87,7 +87,7 @@ internal class LlamaTraining
         var configName = "config.json";
         var originalWeightFolder = Path.Combine(weightFolder, "original");
 
-        Console.WriteLine("Loading Llama from huggingface model weight folder");
+        Console.WriteLine("Loading Llama...");
         var tokenizer = LlamaTokenizerHelper.FromPretrained(originalWeightFolder);
         var model = LlamaForCausalLM.FromPretrained(weightFolder, configName, checkPointName: checkPointName, layersOnTargetDevice: -1, quantizeToInt8: false);
 

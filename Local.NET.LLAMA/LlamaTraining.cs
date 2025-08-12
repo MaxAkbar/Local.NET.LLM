@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.ML.GenAI.Core;
+﻿using Microsoft.ML.GenAI.Core;
 using Microsoft.ML.GenAI.LLaMA;
 using static TorchSharp.torch;
 using TorchSharp;
 using Microsoft.ML.Tokenizers;
-using TorchSharp.Modules;
 using TorchSharp.PyBridge;
 using Microsoft.Extensions.AI;
 using AutoGen.Core;
@@ -25,7 +19,7 @@ internal class LlamaTraining
         using var loggerFactory = LoggerFactory.Create(builder => builder.AddConsole());
 
         // create logger
-        var logger = loggerFactory.CreateLogger<CasualLMSupervisedFineTuningTrainer>();
+        var logger = loggerFactory.CreateLogger<CausalLMSupervisedFineTuningTrainer>();
 
         var device = "cuda";
 
@@ -46,10 +40,10 @@ internal class LlamaTraining
         var input = CreateDataset(dataset, pipeline.TypedTokenizer, Llama3_1ChatTemplateBuilder.Instance);
 
         // create trainer
-        var sftTrainer = new CasualLMSupervisedFineTuningTrainer(pipeline, logger: logger);
+        var sftTrainer = new CausalLMSupervisedFineTuningTrainer(pipeline, logger: logger);
 
         // Train the model
-        var option = new CasualLMSupervisedFineTuningTrainer.Option
+        var option = new CausalLMSupervisedFineTuningTrainer.Option
         {
             BatchSize = 1,
             Device = device,

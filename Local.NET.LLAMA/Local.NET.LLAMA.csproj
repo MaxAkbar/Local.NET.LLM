@@ -8,11 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoGen.Core" Version="0.2.1" />
+    <PackageReference Include="AutoGen.Core" Version="0.2.3" />
     <PackageReference Include="Microsoft.Extensions.Logging" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="9.0.0" />
-    <PackageReference Include="Microsoft.ML.GenAI.Core" Version="0.23.0-preview.24616.5" />
-    <PackageReference Include="Microsoft.ML.GenAI.LLaMA" Version="0.23.0-preview.24616.5" />
+    <PackageReference Include="Microsoft.ML.GenAI.Core" Version="0.23.0-preview.25373.1" />
+    <PackageReference Include="Microsoft.ML.GenAI.LLaMA" Version="0.23.0-preview.25373.1" />
     <PackageReference Include="TorchSharp-cuda-windows" Version="0.105.0" />
   </ItemGroup>
 
